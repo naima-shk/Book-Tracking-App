@@ -1,9 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import BookShelf from "./BookShelf.js";
 import "./App.css";
 
-class MainPage extends React.Component {
+export default class MainPage extends React.Component {
+  
+constructor(props) {
+    super(props);
+    this.state = {
+      isToggleOn: true
+  }
+}
+  Search=()=> {
+    this.setState({isToggleOn: true
+    });
+  }
   render() {
     const ShelfDisplay = [
       {
@@ -19,11 +30,8 @@ class MainPage extends React.Component {
         name: "Read",
       },
     ];
-    handleclick(){
-      this.setState(state => ({
-        isToggleOn: true
-}));
-    }
+  
+    
     const books = this.props.books;
     return (
       <div className="list-books">
@@ -43,10 +51,9 @@ class MainPage extends React.Component {
           </div>
         </div>
         <div className="open-search">
-          <button onClick={this.handleclick}>Search</button>
+          <button type="button" onClick={this.Search}>Search</button>
         </div>
       </div>
     );
   }
-}
-export default MainPage;
+};

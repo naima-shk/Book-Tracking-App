@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import Book from "./Book";
 import * as BooksAPI from "./BooksAPI";
 
-//It is supposed to search through the list of books and find one that matches your search
 class SearchPage extends React.Component {
   state = {
     results: [],
     query: "",
   };
-  //the order of which the books show on the Bookshelf
+
   shelfOrder = (books) => {
     let SearchBooks = this.props.books;
     books.forEach((book) => {
