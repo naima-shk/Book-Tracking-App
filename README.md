@@ -8,7 +8,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## How to Load the App
 
-You can clone the App using the below link.
+use
+`npm install OR Yarn intsall`
+Then You can clone the App using the below link.
 
 `git clone git@github.com:naima-shk/Book-Tracking-App.git`
 
@@ -16,8 +18,4 @@ In the project directory, you can run:
 
 ### `yarn start` OR `npm start`
 
-Runs the app in the development mode.<br />
 Open [http://localhost:3000] to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
