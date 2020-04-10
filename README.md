@@ -1,3 +1,9 @@
+### MyReads A Book Lending App
+
+## Project Purpose
+
+This Application is built for my Udacity Nanodegree Program. The purpose of this porject is to demonstrate understanding of the basic structure and operation of a React based App.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

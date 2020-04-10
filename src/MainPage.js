@@ -2,43 +2,21 @@ import React from "react";
 //import {Link} from "react-router-dom";
 import BookShelf from "./BookShelf.js";
 import "./App.css";
+import { NavLink } from "react-router-dom";
 
 export default class MainPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isToggleOn: true,
-    };
-  }
-  /*constructor(props) {
-    super(props);
-    this.state = {
-      isToggleOn: true,
-      isToggleOff: true
-  }
-}
-  Search=()=> {
-    this.setState({isToggleOn: true
-    });
-  } */
- render() {
-    const ShelfDisplay = 
-    [
-      {type: "currentlyReading",
-        name: "Currently Reading",
-      },
-      {type: "wantToRead",
-       name: "Want to Read",
-      },
-      { type: "read",
-        name: "Read",
-      },
+    
+  render() {
+    const ShelfDisplay = [
+      { type: "currentlyReading", name: "Currently Reading" },
+      { type: "wantToRead", name: "Want to Read" },
+      { type: "read", name: "Read" },
     ];
     const books = this.props.books;
     return (
       <div className="list-books">
         <div className="list-books-title">
-          <h1>MyReads</h1>
+          <h1>MyReads: A Book Lending App</h1>
         </div>
         <div className="list-books-content">
           <div>
@@ -52,13 +30,12 @@ export default class MainPage extends React.Component {
             ))}
           </div>
         </div>
-          <div className="open-search">
-        
-    <button onClick={() => this.setState({ isToggleOn: true})}>
-      Search
-    </button>
-    </div>
-    </div>
-  );
-}
+        <NavLink to='/search'>
+        <div className="open-search">
+          <button  onClick={this.searchHandler}>Search</button>
+            </div>
+            </NavLink>
+      </div>
+      );
+  }
 }
