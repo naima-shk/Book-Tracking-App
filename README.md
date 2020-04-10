@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## How to Load the App
 
 use
-`npm install OR Yarn intsall`
+`npm install OR Yarn install`
 Then You can clone the App using the below link.
 
 `git clone git@github.com:naima-shk/Book-Tracking-App.git`
