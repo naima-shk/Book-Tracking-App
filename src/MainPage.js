@@ -1,37 +1,39 @@
 import React from "react";
-//import { Link } from "react-router-dom";
+//import {Link} from "react-router-dom";
 import BookShelf from "./BookShelf.js";
 import "./App.css";
 
 export default class MainPage extends React.Component {
-  
-constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
-      isToggleOn: true
+      isToggleOn: true,
+    };
+  }
+  /*constructor(props) {
+    super(props);
+    this.state = {
+      isToggleOn: true,
+      isToggleOff: true
   }
 }
   Search=()=> {
     this.setState({isToggleOn: true
     });
-  }
-  render() {
-    const ShelfDisplay = [
-      {
-        type: "currentlyReading",
+  } */
+ render() {
+    const ShelfDisplay = 
+    [
+      {type: "currentlyReading",
         name: "Currently Reading",
       },
-      {
-        type: "wantToRead",
-        name: "Want to Read",
+      {type: "wantToRead",
+       name: "Want to Read",
       },
-      {
-        type: "read",
+      { type: "read",
         name: "Read",
       },
     ];
-  
-    
     const books = this.props.books;
     return (
       <div className="list-books">
@@ -50,10 +52,13 @@ constructor(props) {
             ))}
           </div>
         </div>
-        <div className="open-search">
-          <button type="button" onClick={this.Search}>Search</button>
-        </div>
-      </div>
-    );
-  }
-};
+          <div className="open-search">
+        
+    <button onClick={() => this.setState({ isToggleOn: true})}>
+      Search
+    </button>
+    </div>
+    </div>
+  );
+}
+}
