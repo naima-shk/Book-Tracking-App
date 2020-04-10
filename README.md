@@ -6,7 +6,7 @@ This Application is built for my Udacity Nanodegree Program. The purpose of this
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## How to Load the App
+## How to Run the App Locally
 
 You can clone the App using the below link.
 
