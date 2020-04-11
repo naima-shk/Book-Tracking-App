@@ -1,18 +1,10 @@
-import React from "react";
-//import {Link} from "react-router-dom";
-import BookShelf from "./BookShelf.js";
-import "./App.css";
-import { NavLink } from "react-router-dom";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Bookshelf from "./Bookshelf";
 
-export default class MainPage extends React.Component {
-    
+class ListBooks extends Component {
   render() {
-    const ShelfDisplay = [
-      { type: "currentlyReading", name: "Currently Reading" },
-      { type: "wantToRead", name: "Want to Read" },
-      { type: "read", name: "Read" },
-    ];
-    const books = this.props.books;
+    const { bookshelves, books, onMove } = this.props;
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -20,22 +12,23 @@ export default class MainPage extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            {ShelfDisplay.map((shelf) => (
-              <BookShelf
-                key={shelf.type}
-                books={books.filter((book) => book.shelf === shelf.type)}
-                name={shelf.name}
-                moveShelf={this.props.onChange}
+            {bookshelves.map((shelf) => (
+              <Bookshelf
+                key={shelf.key}
+                shelf={shelf}
+                books={books}
+                onMove={onMove}
               />
             ))}
           </div>
         </div>
-        <NavLink to='/search'>
         <div className="open-search">
-          <button  onClick={this.searchHandler}>Search</button>
-            </div>
-            </NavLink>
+          <Link to="search">
+            <button>Add a Book</button>
+          </Link>
+        </div>
       </div>
-      );
+    );
   }
 }
+export default ListBooks;

@@ -1,66 +1,30 @@
-import React from "react";
+import React from 'react';
+import BookshelfChanger from './BookshelfChanger';
 
-class Book extends React.Component {
-  ShelfPage(book) {
-    return (
-      <select onChange={this.moveShelf} value={book.shelf}>
-        <option value="move" disabled>
-          Move to...
-        </option>
-        <option value="currentlyReading">Currently Reading</option>
-        <option value="wantToRead">Want to Read</option>
-        <option value="read">Read</option>
-        <option value="none">None</option>
-      </select>
-    );
-  }
-
-  thumbnail(book) {
-    if (!book.imageLinks) {
-      book.imageLinks = [];
-      book.imageLinks.smallThumbnail = "http://via.placeholder.com/128x158";
-      book.imageLinks.thumbnail =
-        "http://via.placeholder.com/128x188?text=no+cover";
-    }
-  }
-
-  BookPage(book) {
-    return (
-      <div>
-        <div className="book-title">{book.title}</div>
-        <div className="book-authors">{book.authors}</div>
+const Book = ({ book, shelf, onMove }) => (
+  <li>
+    <div className="book">
+      <div className="book-top">
+        <div
+          className="book-cover"
+          style={{
+            width: 130,
+            height: 195,
+            backgroundImage: `url(${
+              book.imageLinks
+                ? book.imageLinks.thumbnail
+                : 'icons/book-placeholder.svg'
+            })`
+          }}
+        />
+        <BookshelfChanger book={book} shelf={shelf} onMove={onMove} />
       </div>
-    );
-  }
+      <div className="book-title">{book.title}</div>
+      <div className="book-authors">
+        {book.authors ? book.authors.join(', ') : 'Unknown Author'}
+      </div>
+    </div>
+  </li>
+);
 
-  moveShelf = (e) => {
-    this.props.onUpdate(e.target.value);
-  };
-
-  render() {
-    const book = this.props.book;
-    console.log(book);
-    this.thumbnail(book);
-
-    return (
-      <li>
-        <div className="book">
-          <div className="book-top">
-            <div
-              className="book-cover"
-              title={book.description}
-              style={{
-                width: 128,
-                height: 188,
-                backgroundImage: `url("${book.imageLinks.thumbnail}")`,
-              }}
-            />
-            <div className="book-shelf-changer">{this.ShelfPage(book)}</div>
-          </div>
-          {this.BookPage(book)}
-        </div>
-      </li>
-    );
-  }
-}
 export default Book;

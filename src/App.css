@@ -174,14 +174,14 @@ button:active {
   position: absolute;
   right: 0;
   bottom: -10px;
-  width: 45px;
-  height: 45px;
-  border-radius: 60%;
-  background: #60ac5d;
+  width: 50px;
+  height: 50px;
+  border-radius: 63%;
+  background: darkgreen;
   background-image: url("./icons/arrow-drop-down.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 20px;
+  background-size: 22px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
