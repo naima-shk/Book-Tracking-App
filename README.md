@@ -14,11 +14,11 @@ You can clone the App using the below link.
 
 In the project directory, you can run:
 
-`npm install` OR `Yarn install`
+`npm install`
 
 then run
 
-`yarn start` OR `npm start`
+`npm start`
 
 Open [http://localhost:3000] to view it in the browser.
 
